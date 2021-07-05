@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'com.demoqa'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            'com.codeborne:selenide:5.22.2',
+            'org.junit.jupiter:junit-jupiter-api:5.7.0')
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
