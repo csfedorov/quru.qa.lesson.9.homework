@@ -10,10 +10,6 @@ import java.io.File;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-/**
- * Created by Konstantin Fedorov on 05.07.2021.
- * Wildberries.ru (c)
- */
 public class AutomationPracticeFormTest {
     @BeforeAll
     static void setup() {
