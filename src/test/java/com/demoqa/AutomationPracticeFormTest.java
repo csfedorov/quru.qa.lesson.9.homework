@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -48,16 +49,16 @@ public class AutomationPracticeFormTest {
 
         $x("//button[@type='submit']").click();
 
-        $x("//div[@class='modal-content']").should(Condition.visible);
-        $x("//td[text()='Student Name']/following::td[1]").shouldHave(Condition.text("TestFirstName TestLastName"));
-        $x("//td[text()='Student Email']/following::td[1]").shouldHave(Condition.text("test@test.test"));
-        $x("//td[text()='Gender']/following::td[1]").shouldHave(Condition.text("Male"));
-        $x("//td[text()='Mobile']/following::td[1]").shouldHave(Condition.text("0000000000"));
-        $x("//td[text()='Date of Birth']/following::td[1]").shouldHave(Condition.text("01 January,1900"));
-        $x("//td[text()='Subjects']/following::td[1]").shouldHave(Condition.text("Computer Science"));
-        $x("//td[text()='Hobbies']/following::td[1]").shouldHave(Condition.text("Sports, Reading, Music"));
-        $x("//td[text()='Picture']/following::td[1]").shouldHave(Condition.text("1.jpg"));
-        $x("//td[text()='Address']/following::td[1]").shouldHave(Condition.text("Test Address"));
-        $x("//td[text()='State and City']/following::td[1]").shouldHave(Condition.text("NCR Delhi"));
+        $x("//div[@class='modal-content']").shouldBe(Condition.visible);
+        $x("//td[text()='Student Name']/following::td[1]").shouldHave(text("TestFirstName TestLastName"));
+        $x("//td[text()='Student Email']/following::td[1]").shouldHave(text("test@test.test"));
+        $x("//td[text()='Gender']/following::td[1]").shouldHave(text("Male"));
+        $x("//td[text()='Mobile']/following::td[1]").shouldHave(text("0000000000"));
+        $x("//td[text()='Date of Birth']/following::td[1]").shouldHave(text("01 January,1900"));
+        $x("//td[text()='Subjects']/following::td[1]").shouldHave(text("Computer Science"));
+        $x("//td[text()='Hobbies']/following::td[1]").shouldHave(text("Sports, Reading, Music"));
+        $x("//td[text()='Picture']/following::td[1]").shouldHave(text("1.jpg"));
+        $x("//td[text()='Address']/following::td[1]").shouldHave(text("Test Address"));
+        $x("//td[text()='State and City']/following::td[1]").shouldHave(text("NCR Delhi"));
     }
 }
