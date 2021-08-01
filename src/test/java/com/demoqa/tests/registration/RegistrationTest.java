@@ -1,19 +1,11 @@
 package com.demoqa.tests.registration;
 
-import com.codeborne.selenide.Configuration;
 import com.demoqa.pages.registration.RegistrationPage;
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class RegistrationTest {
+public class RegistrationTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
-
-    @BeforeAll
-    static void setup() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.startMaximized = true;
-    }
 
     @Test
     public void positiveFillTest() {
