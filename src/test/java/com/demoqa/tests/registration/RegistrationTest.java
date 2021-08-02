@@ -47,20 +47,20 @@ public class RegistrationTest extends TestBase {
                         .selectCity(city);
             });
             step("Submit form", () -> registrationPage.clickSubmitButton());
-
-            step("Verify successful form submit", () ->
-                    registrationPage
-                            .verifyResults(firstName + " " + lastName)
-                            .verifyResults(email)
-                            .verifyResults(gender)
-                            .verifyResults(phone)
-                            .verifyResults(day + " " + month + "," + year)
-                            .verifyResults(subjects)
-                            .verifyResults(hobbies)
-                            .verifyResults(picture)
-                            .verifyResults(address)
-                            .verifyResults(state)
-                            .verifyResults(city));
+        });
+        step("Verify successful form submit", () -> {
+            registrationPage
+                    .verifyResults(firstName + " " + lastName)
+                    .verifyResults(email)
+                    .verifyResults(gender)
+                    .verifyResults(phone)
+                    .verifyResults(day + " " + month + "," + year)
+                    .verifyResults(subjects)
+                    .verifyResults(hobbies)
+                    .verifyResults(picture)
+                    .verifyResults(address)
+                    .verifyResults(state)
+                    .verifyResults(city);
         });
     }
 }
